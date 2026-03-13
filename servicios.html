@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios Petroleros - Servicios</title>
+    <link rel="preconnect" href="https://placehold.co">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,11 +20,12 @@
                 <img src="img/logo_electromica.jpeg" alt="Logo de la Empresa" class="logo">
             </a>
         </div>
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir Menú">☰</div>
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html" style="color: var(--secondary-color);">Servicios</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -30,31 +35,96 @@
         <section class="section">
             <div class="container">
                 <h2>Nuestros Servicios</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <img src="img/alumbrado_publico.png" alt="Alumbrado" class="service-icon">
-                        <h3>Alumbrado Público</h3>
-                        <p>Instalación, mantenimiento y reparación de sistemas de alumbrado público.</p>
+                <div class="services-panel">
+                    <div class="services-tabs">
+                        <button class="service-tab active" data-target="ingenieria">Ingeniería y Diseño</button>
+                        <button class="service-tab" data-target="construccion">Construcción y Mantenimiento</button>
+                        <button class="service-tab" data-target="instrumentacion">Instrumentación y Control</button>
+                        <button class="service-tab" data-target="proteccion">Protección e Infraestructura</button>
+                        <button class="service-tab" data-target="generales">Servicios Generales</button>
                     </div>
-                    <div class="service-card">
-                        <img src="img/f1.jpg" alt="Mantenimiento" class="service-icon">
-                        <h3>Mantenimiento de Pozos</h3>
-                        <p>Servicios integrales para maximizar la vida útil y producción de sus activos.</p>
-                    </div>
-                    <div class="service-card">
-                        <img src="https://placehold.co/80x80/f4f7f6/1c2833?text=3" alt="Consultoría"
-                            class="service-icon">
-                        <h3>Consultoría Técnica</h3>
-                        <p>Asesoramiento experto para la optimización de recursos y operaciones en campo.</p>
-                    </div>
-                    <div class="service-card">
-                        <img src="https://placehold.co/80x80/f4f7f6/1c2833?text=4" alt="Consultoría Adicional"
-                            class="service-icon">
-                        <h3>Consultoría Técnica</h3>
-                        <p>Asesoramiento experto para la optimización de recursos y operaciones en campo.</p>
+                    <div class="services-body">
+                        <div class="services-image-container">
+                            <img src="img/img_servicios/servicio_ing.jpeg" alt="Ingeniería y Diseño" id="img-ingenieria"
+                                class="category-image active">
+                            <img src="img/img_servicios/servicio_construccion.jpeg" alt="Construcción y Mantenimiento"
+                                id="img-construccion" class="category-image">
+                            <img src="img/img_servicios/servicio_instrumentacion.jpeg" alt="Instrumentación y Control"
+                                id="img-instrumentacion" class="category-image">
+                            <img src="img/img_servicios/servicio_proteccion.jpeg" alt="Protección e Infraestructura"
+                                id="img-proteccion" class="category-image">
+                            <img src="img/img_servicios/servicio_general.jpeg" alt="Servicios Generales"
+                                id="img-generales" class="category-image">
+                        </div>
+                        <div class="services-content">
+                            <div class="service-pane active" id="ingenieria">
+                                <h3>Ingeniería y Diseño</h3>
+                                <ul>
+                                    <li>Desarrollo de Ingeniería Eléctrica Conceptual, Básica y De Detalle.</li>
+                                    <li>Diseño, Ensamblado, Configuración y Puesta en Marcha de Armarios para
+                                        Accionamiento
+                                        de Pozos de Petróleo Tipo BCP (Bomba de Cavidad Progresiva) y BES (Bomba Electro
+                                        Sumergible).</li>
+                                    <li>Dimensionamiento, Instalación y Programación de Accionamiento de Motores:
+                                        Arrancadores Directos, Delta Estrella, Arrancadores Suaves y Variadores de
+                                        Velocidad
+                                        AC y DC tanto en Media como en Baja Tensión.</li>
+                                    <li>Diseño, Instalación y Programación de Sistemas de Control Industrial basados en
+                                        Controladores Lógicos Programables PLC's.</li>
+                                </ul>
+                            </div>
+                            <div class="service-pane" id="construccion">
+                                <h3>Construcción y Mantenimiento</h3>
+                                <ul>
+                                    <li>Redes de Transmisión y Distribución Eléctrica.</li>
+                                    <li>Subestaciones Eléctricas.</li>
+                                    <li>Unidades de Turbo Generación Eléctricas.</li>
+                                    <li>Unidades de Turbo Compresión de Gas.</li>
+                                    </li>
+                                    <li>Sistemas de Alumbrado Público Vial, Residencial, Comercial e Industrial.</li>
+                                </ul>
+                            </div>
+                            <div class="service-pane" id="instrumentacion">
+                                <h3>Instrumentación y Control</h3>
+                                <ul>
+                                    <br>
+                                    <br>
+                                    <li>Instrumentación, Automatización y Control de Procesos Industriales.</li>
+                                    <br>
+                                    <li>Instalación y Calibración de Equipos de Instrumentación.</li>
+                                </ul>
+                            </div>
+                            <div class="service-pane" id="proteccion">
+                                <h3>Protección y Telecomunicaciones</h3>
+                                <ul>
+                                    <li>Aterramiento de Sistemas de Transmisión, Distribución, Transformación,
+                                        Generación,
+                                        Infraestructura y Edificaciones en General.</li>
+                                    <li>Sistemas Inhibidores de Corrosión y Protección Catódica para Estructuras
+                                        Metálicas,
+                                        Tanques de Almacenamiento Industrial, Tuberías de Flujo, Gasoductos y
+                                        Poliductos.
+                                    </li>
+                                    <li>Sistema de Telecomunicaciones.</li>
+                                    <li>Suministro, Instalación, Conexión y Certificación de Fibra Óptica.</li>
+                                    <li>Sistemas de Pararrayos y Protecciones contra Descargas Atmosféricas.</li>
+                                </ul>
+                            </div>
+                            <div class="service-pane" id="generales">
+                                <h3>Servicios Generales</h3>
+                                <ul>
+                                    <br>
+                                    <li>Limpieza, Desmalezamiento, Deforestación y Reforestación de Instalaciones
+                                        Eléctricas
+                                        e industriales.</li>
+                                    <li>Corredores Eléctricos, Corredores de Tuberías e Instalaciones
+                                        Industriales en General.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
     </main>
 
@@ -64,7 +134,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

@@ -1,3 +1,66 @@
+/* Estilos para el carrusel de logos */
+
+.compañias-carrusel {
+    /* Contenedor del carrusel */
+    width: 100%;
+    overflow: hidden;
+    /* Esto es lo que oculta los logos que están fuera de la vista */
+    padding: 15px 0;
+    background-color: #f0f0f0;
+    /* Un fondo muy suave para el carrusel */
+}
+
+.compañias-carrusel h2 {
+    /* Título de la sección */
+    font-size: 2rem;
+    color: #1a4d8c;
+    margin-bottom: 2rem;
+}
+
+.logos-slide {
+    display: flex;
+    /* 280px total por logo (200px width + 80px margin) * 10 logos (5 originales + 5 duplicados) */
+    width: calc(280px * 10);
+    animation: slide 20s linear infinite;
+    /* Aplica la animación: 20s de duración, lineal, infinito */
+    will-change: transform;
+    /* Hardware Acceleration */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-280px * 5));
+    }
+
+    /* Desplaza la mitad (5 logos originales) */
+}
+
+.logos-slide:hover {
+    animation-play-state: paused;
+    /* Pausa la animación cuando el ratón está encima */
+}
+
+.logos-slide img {
+    height: 100px;
+    width: 200px;
+    /* Ancho fijo para cada logo */
+    margin: 0 40px;
+    opacity: 1;
+    transition: filter 0.3s, opacity 0.3s;
+
+}
+
+.logos-slide img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.2);
+    transition: transform 0.5s;
+}
+
 /* Variables CSS para una fácil personalización de colores posteriormente */
 :root {
     --primary-color: #1c2833;
@@ -9,7 +72,7 @@
     --bg-light: #f4f7f6;
     --bg-dark: #273746;
     --text-light: #ffffff;
-    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-main: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -140,8 +203,12 @@ h2::after {
     justify-content: center;
     text-align: center;
     background-color: var(--bg-light);
-    /* Aquí se puede añadir una imagen de fondo de una plataforma petrolera con un overlay oscuro */
-    background: linear-gradient(rgba(28, 40, 51, 0.8), rgba(28, 40, 51, 0.8));
+    /* Imagen de fondo con overlay oscuro */
+    background: linear-gradient(rgba(28, 40, 51, 0.2), rgba(28, 40, 51, 0.8)), url('img/fondo-hero.jpeg') center/cover no-repeat;
+}
+
+.hero-nosotros {
+    background: linear-gradient(rgba(28, 40, 51, 0.6), rgba(28, 40, 51, 0.9)), url('img/fondo_seccion_nosotros.jpeg') center/cover no-repeat;
 }
 
 .hero h1 {
@@ -179,43 +246,151 @@ h2::after {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Servicios */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
+/* Panel de Servicios Interactivo */
+.services-panel {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: 0 auto;
     background: var(--bg-color);
-    padding: 3rem 2rem;
     border-radius: 8px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+}
+
+.services-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--bg-light);
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.service-tab {
+    flex: 1;
+    padding: 1.2rem 1rem;
     text-align: center;
-    border-top: 5px solid var(--secondary-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-.service-icon {
-    width: 270px;
-    height: 200px;
-    object-fit: contain;
-    margin-bottom: 1.5rem;
-
-    /* Opcional: hace la imagen circular */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
-}
-
-.service-card h3 {
-    margin-bottom: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.05rem;
+    font-weight: 600;
     color: var(--primary-color);
-    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-bottom: 4px solid transparent;
+    /* default */
+}
+
+.service-tab:hover {
+    background-color: #e8ecef;
+}
+
+.service-tab.active {
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+.services-body {
+    display: flex;
+}
+
+.services-image-container {
+    width: 35%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #e0e0e0;
+    background-color: #fcfcfc;
+}
+
+.category-image {
+    display: none;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.category-image.active {
+    display: block;
+}
+
+.services-content {
+    width: 65%;
+    padding: 2.5rem;
+    background-color: var(--bg-color);
+}
+
+.service-pane {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.service-pane.active {
+    display: block;
+}
+
+.service-pane h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.service-pane ul {
+    list-style: none;
+}
+
+.service-pane ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.service-pane ul li::before {
+    content: "◾";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    top: 2px;
+}
+
+.service-pane ul.sub-list {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.service-pane ul.sub-list li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.service-pane ul.sub-list li::before {
+    content: "○";
+    color: var(--primary-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Nosotros */
@@ -244,30 +419,294 @@ footer {
     padding: 2rem 0;
 }
 
+/* Botón de Mobile Menu por defecto oculto */
+.menu-toggle {
+    display: none;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    user-select: none;
+}
+
 /* Responsividad básica */
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        padding: 1rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo {
+        height: 60px;
     }
 
     .nav-menu {
-        margin-top: 1rem;
+        margin-top: 0;
         justify-content: center;
         width: 100%;
+        /* Ocultar menú animable */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.4s;
+
+        position: absolute;
+        top: 100%;
+        /* Justo debajo de cabecera */
+        left: 0;
+        background-color: var(--bg-color);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        will-change: transform, opacity;
+        /* Hardware Acceleration */
+    }
+
+    /* Clase activa para mostrar el menú de forma fluida */
+    .nav-menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 
     .nav-menu ul {
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding: 0;
+    }
+
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #eeeeee;
+    }
+
+    .section {
+        padding: 6rem 5% 3rem;
+        /* Menos espacio vertical en móviles */
+    }
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .hero p {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        max-width: 90%;
+    }
+
+    .btn {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+
+    /* Ajuste de carrusel en Android / Móviles */
+    .logos-slide {
+        /* Para 10 logos: 120px ancho + 40px margen = 160px; 160px * 10 = 1600px */
+        width: calc(160px * 10);
+        animation: slide-mobile 20s linear infinite;
+    }
+
+    .logos-slide img {
+        height: 60px;
+        width: 120px;
+        margin: 0 20px;
+    }
+
+    .logos-slide img:hover {
+        transform: scale(1.05);
+        /* Escala más sutil en pantalla pequeña */
+    }
+
+    .services-body {
+        flex-direction: column;
+    }
+
+    .services-image-container {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 1rem;
+    }
+
+    .service-tab {
+        flex: 1 1 50%;
+        font-size: 0.95rem;
+        padding: 0.8rem 0.5rem;
+    }
+
+    .service-tab.active {
+        border-right: none;
+        border-bottom: 4px solid var(--secondary-color);
+    }
+
+    .services-content {
+        width: 100%;
+        padding: 1.5rem;
+    }
+}
+
+@keyframes slide-mobile {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-160px * 5));
+    }
+}
+
+/* ==============================
+   ''''''''''''''''''''''''''''''''''''''''''''Sección: Trabajos Realizados (Tabla Animada)'''''''''''''''''''''''''
+   Este bloque contiene los estilos para la sección donde se muestran los clientes 
+   y las descripciones de los contratos en una tabla moderna.
+   ============================== */
+.trabajos-section {
+    /* Espaciado amplio (6rem arriba/abajo, 5% a los lados) para dar respiro al diseño */
+    padding: 6rem 5%;
+    /* Mismo color de fondo claro usado en otras secciones del sitio */
+    background-color: var(--bg-light);
+    overflow: hidden;
+    /* Para animaciones que vienen desde fuera */
+}
+
+.trabajos-section h2 {
+    /* Separación entre el título y el comienzo de la tabla */
+    margin-bottom: 2.5rem;
+}
+
+.trabajos-table-wrapper {
+    /* Permite deslizar la tabla horizontalmente en teléfonos si su contenido excede el ancho (Responsive) */
+    overflow-x: auto;
+    /* Bordes redondeados para un aspecto moderno */
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(28, 40, 51, 0.15);
+    /* Sombra elegante que despega la tabla del fondo claro */
+    background: #ffffff;
+    /* Borde muy sutil para demarcar el cuadro */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.trabajos-table {
+    width: 100%;
+    /* Evita que los bordes de las celdas se vean dobles */
+    border-collapse: collapse;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.trabajos-table thead tr {
+    /* Fondo degradado corporativo: Va desde el azul primario hasta un tono azul acerado */
+    background: linear-gradient(135deg, var(--primary-color), #2c3e50);
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.95rem;
+}
+
+.trabajos-table thead th {
+    padding: 1.2rem 1.5rem;
+    text-align: left;
+    font-weight: 700;
+    border-bottom: 4px solid var(--secondary-color);
+    /* Línea naranja abajo del header */
+}
+
+.trabajos-table tbody tr {
+    /* Línea sutil separadora entre cada fila de la tabla */
+    border-bottom: 1px solid #f0f0f0;
+    /* Transición suave para cuando se pase el ratón por encima (color, escala) */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.trabajos-table tbody tr:last-child {
+    /* Quitar borde inferior a la última fila para que no choque con la caja contenedora */
+    border-bottom: none;
+}
+
+.trabajos-table tbody tr:nth-child(even) {
+    /* Estilo "cebra": Fila sí, fila no (pares) toma un fondo azul levísimo para facilitar lectura */
+    background-color: rgba(28, 40, 51, 0.03);
+    /* Fondo azul muy leve para pares */
+}
+
+.trabajos-table tbody tr:hover {
+    /* Fondo con tinte naranja que se activa momentáneamente al hacer hover */
+    background-color: rgba(243, 156, 18, 0.08);
+    /* Fondo naranja leve en hover */
+    /* Aumenta el tamaño ligeramente dando un efecto 3D Pop-out */
+    transform: scale(1.01);
+    /* Escala más sutil en pantalla pequeña */
+    /* Se añade una pequeña sombra debajo de la fila activada */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    z-index: 10;
+    position: relative;
+    /* Marca vertical con el color secundario de la empresa (anaranjado/dorado) */
+    border-left: 4px solid var(--secondary-color);
+}
+
+.trabajos-table tbody td {
+    padding: 1.2rem 1.5rem;
+    vertical-align: middle;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.trabajos-table tbody td:first-child {
+    font-weight: 700;
+    color: var(--primary-color);
+    width: 35%;
+    /* La empresa toma el 35% del espacio */
+}
+
+/* Animaciones de Scroll */
+/* Por defecto, los elementos NO tienen opacidad cero. 
+   Esto previene que la tabla sea invisible si el JS falla o no se carga rápido. */
+.fade-in-up,
+.fade-in-row {
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* El JS agregará esta clase dinámicamente "js-loading" al body si se activa, 
+   para ocultar inicialmente los elementos antes de hacer scroll */
+body.js-enabled .fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+body.js-enabled .fade-in-row {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+/* Clase visible que el IntersectionObserver agrega */
+body.js-enabled .fade-in-up.visible,
+body.js-enabled .fade-in-row.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .trabajos-section {
+        padding: 4rem 5%;
+    }
+
+    .trabajos-table thead th,
+    .trabajos-table tbody td {
+        padding: 1rem 1.2rem;
+        font-size: 0.9rem;
     }
 }

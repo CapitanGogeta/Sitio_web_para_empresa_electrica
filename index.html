@@ -3,8 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#1c2833">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Servicios Petroleros - Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,11 +23,12 @@
                 <img src="img/logo_electromica.jpeg" alt="Logo de la Empresa" class="logo">
             </a>
         </div>
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir Menú">☰</div>
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
@@ -37,6 +44,125 @@
                 <a href="servicios.html" class="btn">Conoce nuestros servicios</a>
             </div>
         </section>
+
+        <section class="compañias-carrusel">
+            <h2>Clientes Satisfechos</h2>
+            <div class="carrusel-container">
+                <div class="logos-slide">
+                    <img src="img/logos_carrusel/cmec_logo.png" alt="cmeclogo" loading="lazy">
+                    <img src="img/logos_carrusel/cnpc_logo.png" alt="cnpc logo" loading="lazy">
+                    <img src="img/logos_carrusel/pdvsa_logo.png" alt="pdvsa logo" loading="lazy">
+                    <img src="img/logos_carrusel/pdvsa_gas.png" alt="pdvsa gas" loading="lazy">
+                    <img src="img/logos_carrusel/logo_pdvsa_industrial.png" alt="pdvsa industrial" loading="lazy">
+
+                    <img src="img/logos_carrusel/cmec_logo.png" alt="cmeclogo" loading="lazy">
+                    <img src="img/logos_carrusel/cnpc_logo.png" alt="cnpc logo" loading="lazy">
+                    <img src="img/logos_carrusel/pdvsa_logo.png" alt="pdvsa logo" loading="lazy">
+                    <img src="img/logos_carrusel/pdvsa_gas.png" alt="pdvsa gas" loading="lazy">
+                    <img src="img/logos_carrusel/logo_pdvsa_industrial.png" alt="pdvsa industrial" loading="lazy">
+                </div>
+                <br>
+                <br>
+            </div>
+        </section>
+
+        <!-- Sección Trabajos Realizados -->
+        <section class="trabajos-section">
+            <div class="container">
+                <h2 class="fade-in-up">Trabajos Realizados</h2>
+                <div class="trabajos-table-wrapper fade-in-up">
+                    <table class="trabajos-table">
+                        <thead>
+                            <tr>
+                                <th> Clientes</th>
+                                <th> Descripción del Trabajo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="fade-in-row">
+                                <td>PDVSA Petróleos, S.A</td>
+                                <td>Mantenimiento correctivo del sistema puesta a tierra en las líneas eléctricas de
+                                    distribución de la División Carabobo.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>PDVSA Petróleos, S.A</td>
+                                <td>Servicio de mantenimiento de los equipos mecánicos, eléctricos e instrumentación,
+                                    ubicado en las áreas 100, Y 300, perteneciente al Campo Morichal, Intevep, S.A,
+                                    Monagas.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>China CAMC Engineering LTD</td>
+                                <td>Tendido de cable eléctrico y conexionado en Fábrica de Fábricas Anaco, Edo.
+                                    Anzoátegui.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>PDVSA GAS, S.A.</td>
+                                <td>Reparación y mantenimiento del sistema de aguas blancas y residuales no industriales
+                                    en la P.E. Santa Bárbara.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>PDVSA Petróleos, S.A</td>
+                                <td>Mantenimiento Barra 13,8 / 230 / 0,48 KV en la Planta Extracción Jusepín.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>Corp. Ven. de Alimentos (CVAL)</td>
+                                <td>Construcción y puesta en marcha de planta procesadora de Yuca (llave en mano), en
+                                    Cúpira, Edo. Miranda.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>PDVSA Petróleos, S.A</td>
+                                <td>Adecuación y mejoras de líneas de distribución en Área O-16 del Distrito Morichal –
+                                    División Carabobo.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>PDVSA Industrial, S.A</td>
+                                <td>Servicio de adecuación y reparación electromecánicas de las grúas 8A, 8B, 10A, 11A y
+                                    11B Planta Imosa Tubo Acerolnatub.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>PDVSA Industrial, S.A</td>
+                                <td>Servicio de reparación y mantenimiento de alumbrado externo ubicado en las torres
+                                    del patio de PDVSA Industrial, S.A. (Planta Batalla El Juncal).</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>PDVSA Industrial, S.A</td>
+                                <td>Servicio de mantenimiento y montaje de accesorios de las redes de distribución de
+                                    alta tensión 13,8KV de la Planta Imosa.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>Orix Resources de Venezuela, C.A.</td>
+                                <td>Reconstrucción de puente grúa Marca Demag de unidad Turbocompresora N°3 Muscar
+                                    (UTC-3) de 20 Toneladas.</td>
+                            </tr>
+                            <tr class="fade-in-row">
+                                <td>CNPC LTD, S.A</td>
+                                <td>Reparación de maquinaria pesada.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Nosotros (Trasladada) -->
+        <section id="nosotros" class="section hero-nosotros section-dark">
+            <div class="container fade-in-up">
+                <h2>Sobre Nuestra Empresa</h2>
+                <div class="nosotros-container" style="background: rgba(28, 40, 51, 0.85); padding: 3rem; border-radius: 10px; margin-top: 2rem;">
+                    <p style="margin-bottom: 2rem; text-align: center; font-size: 1.3rem; color: var(--secondary-color); font-weight: 600;"> Compromiso, experiencia y excelencia al servicio de la industria.</p>
+                    <p style="text-align: justify;">Somos una empresa venezolana de <strong>servicios técnicos
+                            industriales</strong>
+                        fundada
+                        en el año 2012, con la
+                        finalidad de satisfacer la demanda del sector Petrolero y el Parque Industrial del Sur-Oriente del
+                        país. Estamos orientados a brindar soluciones integrales y oportunas a nuestros clientes en las
+                        áreas de mantenimiento eléctrico, protecciones, obras civiles, consultoría y actualización
+                        tecnológica. Contamos con un equipo profesional multidisciplinario de gran experiencia y con alta
+                        motivación al logro. Esto nos permite acometer simultáneamente proyectos de gran envergadura en
+                        diferentes especialidades.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Pie de página -->
@@ -46,7 +172,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

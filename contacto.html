@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios Petroleros - Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://www.google.com">
 </head>
@@ -17,11 +21,12 @@
                 <img src="img/logo_electromica.jpeg" alt="Logo de la Empresa" class="logo">
             </a>
         </div>
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir Menú">☰</div>
         <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="index.html#nosotros">Nosotros</a></li>
                 <li><a href="contacto.html" style="color: var(--secondary-color);">Contacto</a></li>
             </ul>
         </nav>
@@ -43,7 +48,7 @@
                     <p style="margin-bottom: 2rem; font-size: 1.1rem;">Déjanos un mensaje o contáctanos a través de
                         nuestras vías oficiales.</p>
                     <p><strong>Teléfonos:</strong> +58 414-3877861 / +58 414-8985375</p>
-                    <p><strong>Email:</strong> [EMAIL_ADDRESS]</p>
+                    <p><strong>Email:</strong> electromica2012@gmail.com</p>
                     <p><strong>Ubicación:</strong> AV ALIRIO UGARTE PELAYO, CC CENTRO COMERCIAL
                         PETRORIENTE, NIVEL 1 OF 01-N43 ALA NORTE. SECTOR TIPURO. AVENIDA ALIRIO
                         UGARTE PELAYO, MATURIN MONAGAS ZONA POSTAL 6201</p>
@@ -58,7 +63,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var lazyIframe = document.querySelector('iframe[data-src]');

@@ -1,4 +1,4 @@
-// script.js - Lógica para el sitio web estático
+ // script.js - Lógica para el sitio web estático
 
 document.addEventListener('DOMContentLoaded', () => {
     // Escuchar el click en los enlaces del menú para hacer scroll suave (aunque CSS ya tiene scroll-behavior)

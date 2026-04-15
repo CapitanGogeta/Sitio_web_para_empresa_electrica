@@ -74,8 +74,8 @@ const server = http.createServer((req, res) => {
             // Configurar Cache-Control
             const devHeader = {};
             if (extname.match(/^\.(png|jpg|jpeg|gif|ico)$/)) {
-                // Caché para imágenes: 30 días
-                devHeader['Cache-Control'] = 'public, max-age=2592000';
+                // Caché para imágenes: no-cache (para desarrollo y cambios frecuentes)
+                devHeader['Cache-Control'] = 'no-cache';
             } else if (extname.match(/^\.(css|js)$/)) {
                 // Caché para CSS/JS: 1 día
                 devHeader['Cache-Control'] = 'public, max-age=86400';

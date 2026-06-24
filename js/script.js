@@ -2,16 +2,23 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("El sitio web está listo.");
-    
+
     // Inicializar componentes globales
     initMobileMenu();
     initScrollAnimations();
-    
+    initDynamicYear();
+    initCarouselPause();
+
     // Inicializar panel de servicios SOLO si los elementos existen en la página actual
     if (document.querySelector('.service-tab')) {
         initServicesPanel();
     }
 });
+    
+    // Inicializar panel de servicios SOLO si los elementos existen en la página actual
+    if (document.querySelector('.service-tab')) {
+        initServicesPanel();
+    }
 
 function initServicesPanel() {
     const tabs = document.querySelectorAll('.service-tab');
@@ -99,4 +106,31 @@ function initScrollAnimations() {
     } else {
         console.log("Animaciones de scroll deshabilitadas o no soportadas.");
     }
+}
+
+// Actualiza el año del footer dinámicamente para que no quede hardcodeado
+function initDynamicYear() {
+    const yearElements = document.querySelectorAll('[data-current-year]');
+    yearElements.forEach(el => {
+        el.textContent = new Date().getFullYear();
+    });
+}
+
+// Pausa la animación del carrusel cuando sale del viewport para ahorrar recursos
+function initCarouselPause() {
+    const carousel = document.querySelector('.logos-slide');
+    if (!carousel || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            carousel.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+        });
+    }, { threshold: 0 });
+
+    observer.observe(carousel);
+
+    // También pausa cuando la pestaña no es visible
+    document.addEventListener('visibilitychange', () => {
+        carousel.style.animationPlayState = document.hidden ? 'paused' : 'running';
+    });
 }

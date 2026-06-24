@@ -49,6 +49,8 @@
     width: 200px;
     /* Ancho fijo para cada logo */
     margin: 0 40px;
+    object-fit: contain;
+    /* Preserva la proporción del logo sin deformarlo */
     opacity: 1;
     transition: filter 0.3s, opacity 0.3s;
 
@@ -204,11 +206,11 @@ h2::after {
     text-align: center;
     background-color: var(--bg-light);
     /* Imagen de fondo con overlay oscuro */
-    background: linear-gradient(rgba(28, 40, 51, 0.2), rgba(28, 40, 51, 0.8)), url('img/fondo-hero.jpeg') center/cover no-repeat;
+    background: linear-gradient(rgba(28, 40, 51, 0.2), rgba(28, 40, 51, 0.8)), url('../assets/img/fondo-hero.jpeg') center/cover no-repeat;
 }
 
 .hero-nosotros {
-    background: linear-gradient(rgba(28, 40, 51, 0.6), rgba(28, 40, 51, 0.9)), url('img/fondo_seccion_nosotros.jpeg') center/cover no-repeat;
+    background: linear-gradient(rgba(28, 40, 51, 0.6), rgba(28, 40, 51, 0.9)), url('../assets/img/fondo_seccion_nosotros.jpeg') center/cover no-repeat;
 }
 
 .hero h1 {

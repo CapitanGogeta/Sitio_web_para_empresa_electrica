@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://www.google.com">
 
     <script type="application/ld+json">
@@ -36,7 +36,7 @@
       }
     }
     </script>
-    <link rel="icon" type="image/png" href="img/logo_electromica_favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/logo_electromica_favicon.png">
 </head>
 
 <body>
@@ -44,7 +44,7 @@
     <header class="header">
         <div class="logo-container">
             <a href="index.html">
-                <img src="img/logo_electromica.jpeg" alt="Logo de la Empresa" class="logo">
+                <img src="assets/img/logo_electromica.jpeg" alt="Logo de la Empresa" class="logo">
             </a>
         </div>
         <div class="menu-toggle" id="mobile-menu" aria-label="Abrir Menú">☰</div>
@@ -85,31 +85,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 Empresa de Servicios Petroleros. Todos los derechos reservados.</p>
+            <p>&copy; <span data-current-year>2026</span> Empresa de Servicios Petroleros. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var lazyIframe = document.querySelector('iframe[data-src]');
-            if ('IntersectionObserver' in window) {
-                let iframeObserver = new IntersectionObserver(function (entries, observer) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            let iframe = entry.target;
-                            iframe.src = iframe.dataset.src;
-                            iframeObserver.unobserve(iframe);
-                        }
-                    });
-                });
-                iframeObserver.observe(lazyIframe);
-            } else {
-                // Fallback para navegadores antiguos
-                lazyIframe.src = lazyIframe.dataset.src;
-            }
-        });
-    </script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
